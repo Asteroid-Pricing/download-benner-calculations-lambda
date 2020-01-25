@@ -123,9 +123,9 @@ def handler(event):
         print("put object failed:", error)
         raise error
     
-    updated_event = set_(event, 'benner', get_benner_filename())
+    updated_event = set_(event, 'bennerFileName', get_benner_filename())
     print("Done! event:", updated_event)
     return updated_event
 
 if __name__ == "__main__":
-   handler({'tableName': 'asteroids', 'bucket': 'asteroid-files'})
+   handler({'tableName': 'asteroids', 'bucket': 'asteroid-files', 'bennerFileName': get_benner_filename()})
